@@ -10,8 +10,8 @@ CC=/opt/homebrew/opt/llvm/bin/clang
 CFLAGS="-std=c11 -O2 -g3 -Wall -Wextra --target=riscv32-unknown-elf -fuse-ld=lld -fno-stack-protector -ffreestanding -nostdlib"
 
 #　カーネルをビルド
-$CC $CFLAGS -Wl,-Tkernel.ld -Wl,-Map=kernel.map -o kernel.elf \
-    kernel.c
+$CC $CFLAGS -Wl,-Tos/kernel.ld -Wl,-Map=kernel.map -o kernel.elf \
+    os/kernel.c
 
 
 # QEMUを起動
